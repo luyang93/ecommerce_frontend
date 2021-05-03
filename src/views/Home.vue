@@ -55,6 +55,8 @@ export default {
           .get('/api/v1/latest-products/')
           .then(response => {
             this.latestProducts = response.data
+
+            document.title = 'Home | Ecommerce'
           })
           .catch(error => {
             console.log(error)
