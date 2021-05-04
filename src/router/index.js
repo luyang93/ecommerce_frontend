@@ -9,6 +9,7 @@ import Cart from "../views/Cart";
 import SignUp from "../views/SignUp";
 import LogIn from "../views/LogIn";
 import MyAccount from "../views/MyAccount";
+import Checkout from "../views/Checkout";
 
 const routes = [
     {
@@ -51,6 +52,14 @@ const routes = [
         path: '/cart',
         name: 'Cart',
         component: Cart
+    },
+    {
+        path: '/cart/checkout',
+        name: 'Checkout',
+        component: Checkout,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/:category_slug/:product_slug/',
