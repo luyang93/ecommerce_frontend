@@ -6,6 +6,7 @@ import Category from "../views/Category";
 import Search from "../views/Search";
 import Cart from "../views/Cart";
 import SignUp from "../views/SignUp";
+import LogIn from "../views/LogIn";
 
 const routes = [
     {
@@ -25,6 +26,11 @@ const routes = [
         path: '/sign-up',
         name: 'SignUp',
         component: SignUp
+    },
+    {
+        path: '/log-in',
+        name: 'LogIn',
+        component: LogIn
     },
     {
         path: '/search',
