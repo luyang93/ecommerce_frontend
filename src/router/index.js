@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Product from "../views/Product";
 import Category from "../views/Category";
 import Search from "../views/Search";
-
+import Cart from "../views/Cart";
 
 const routes = [
     {
@@ -24,6 +24,11 @@ const routes = [
         path: '/search',
         name: 'Search',
         component: Search
+    },
+    {
+        path: '/cart',
+        name: 'Cart',
+        component: Cart
     },
     {
         path: '/:category_slug/:product_slug/',
