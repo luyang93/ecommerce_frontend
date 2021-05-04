@@ -11,7 +11,7 @@
     </td>
     <td>${{ getItemTotal(item).toFixed(2) }}</td>
     <td>
-      <button class="delete"></button>
+      <button class="delete" @click="removeFromCart(item)"></button>
     </td>
   </tr>
 </template>
@@ -45,6 +45,13 @@ export default {
 
       this.updateCart()
     },
+    updateCart() {
+      localStorage.setItem('cart', JSON.stringify(this.$store.state.cart))
+    },
+    removeFromCart(item) {
+      this.$emit('removeFromCart', item)
+
+      this.updateCart()
     }
   }
 }
