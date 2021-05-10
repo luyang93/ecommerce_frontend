@@ -1,7 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import store from '../store'
 
-import Home from '../views/Home.vue'
+import Home from "../views/Home";
 import Product from "../views/Product";
 import Category from "../views/Category";
 import Search from "../views/Search";
@@ -10,6 +10,7 @@ import SignUp from "../views/SignUp";
 import LogIn from "../views/LogIn";
 import MyAccount from "../views/MyAccount";
 import Checkout from "../views/Checkout";
+import Success from "../views/Success";
 
 const routes = [
     {
@@ -54,6 +55,11 @@ const routes = [
         component: Cart
     },
     {
+        path: '/cart/success',
+        name: 'Success',
+        component: Success
+    },
+    {
         path: '/cart/checkout',
         name: 'Checkout',
         component: Checkout,
@@ -79,7 +85,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if (to.matched.some(record => record.meta.requiredLogin) && !store.state.isAuthenticated) {
+    if (to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated) {
         next({name: 'LogIn', query: {to: to.path}});
     } else {
         next()
